@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp2
+{
+    public partial class Form3 : Form
+    {
+        public Form3()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "benogrenciyim" && textBox3.Text == "123ogrenci")
+            {
+                MessageBox.Show(" HOSGELDİNİZ ");   
+                MessageBox.Show("öğrenci girişi tamamlandı.Kitabı 3 günlüğüne ödünç alabilirsiniz.");
+
+            }
+            else
+            {
+                MessageBox.Show("kullanıcı adı veya sifre hatali !!");
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "KullanıcıAdı")
+            {
+                textBox1.Text = " ";
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == " ")
+            {
+                textBox1.Text = "KullanıcıAdı";
+            }
+        }
+
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "parola ")
+            {
+                textBox3.Text = " ";
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (textBox3.Text == " ")
+            {
+                textBox3.Text = "PAROLA";
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Now.AddDays(3) > dateTimePicker1.Value.Date)
+            {
+                MessageBox.Show("dogru tarih secimi yaptınız..");
+            }
+            else
+            {
+                MessageBox.Show("yanlis tarih secimi.. kitabı max 3 günlügüne kiralayabilirsiniz.");
+            }
+        }
+    }
+}
